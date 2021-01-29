@@ -15,14 +15,14 @@ animations = [ {
 "name": "fear",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 1 ) ],
-"loop": true,
-"name": "run",
-"speed": 5.0
-}, {
 "frames": [  ],
 "loop": true,
 "name": "die",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "run",
 "speed": 5.0
 } ]
 
@@ -55,6 +55,6 @@ shape = SubResource( 3 )
 disabled = true
 
 [node name="Tween" type="Tween" parent="."]
-[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="area_entered" from="Area2D2" to="." method="_on_Area2D_area_entered"]
 [connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]

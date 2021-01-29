@@ -24,18 +24,18 @@ position = Vector2( 197.06, 317.839 )
 script = ExtResource( 7 )
 
 [node name="TimerI" type="Timer" parent="itens"]
-wait_time = 25.0
+wait_time = 15.0
 
 [node name="obstaculos" type="Node" parent="."]
 script = ExtResource( 5 )
 
 [node name="TimerO" type="Timer" parent="obstaculos"]
-wait_time = 10.0
+wait_time = 6.0
 [connection signal="START" from="." to="dog" method="_on_GAME_START"]
-[connection signal="START" from="." to="cenario" method="_on_GAME_START"]
 [connection signal="START" from="." to="dogMal" method="_on_GAME_START"]
-[connection signal="START" from="." to="obstaculos" method="_on_GAME_START"]
+[connection signal="START" from="." to="cenario" method="_on_GAME_START"]
 [connection signal="START" from="." to="itens" method="_on_GAME_START"]
+[connection signal="START" from="." to="obstaculos" method="_on_GAME_START"]
 [connection signal="cool" from="dogMal" to="dog" method="_on_dogMal_cool"]
 [connection signal="cool" from="dogMal" to="cenario" method="_on_dogMal_cool"]
 [connection signal="fear" from="dogMal" to="dog" method="_on_dogMal_fear"]

@@ -7,7 +7,7 @@ signal cool
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
-	var tempo = (((randi()%5) +1)/5)*20
+	var tempo = rand_range(10,20)
 	$Timer0.wait_time = tempo
 	pass # Replace with function body.
 
@@ -21,7 +21,7 @@ func _on_VisibilityNotifier2D_screen_entered():
 	$Timer1.start()
 	#set timer0
 	randomize()
-	var tempo = (((randi()%5) +1)/5)*20
+	var tempo = rand_range(10,20)
 	$Timer0.wait_time = tempo
 	pass # Replace with function body.
 
