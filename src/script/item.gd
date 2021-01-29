@@ -7,11 +7,8 @@ export (int) var vely = 20
 func _ready():
 	pass # Replace with function body.
 
-func _process(delta):
-	position.x += velx*delta
-	if position.y > startY+10:
-		position.y += -vely*delta
-	elif position.y < startY-10:
-		position.y += vely*delta
-		
+func _physics_process(delta):
+	if position.y > startY+10 or position.y<startY-10:
+		vely = -vely
+	move_and_slide(Vector2(velx,vely))
 

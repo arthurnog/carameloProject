@@ -9,6 +9,7 @@ extents = Vector2( 33.3248, 32.5762 )
 [node name="obs0" type="KinematicBody2D" groups=[
 "obstacle",
 ]]
+position = Vector2( 1000, 317.839 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -20,3 +21,6 @@ texture = ExtResource( 1 )
 position = Vector2( 1.18921, 7.62939e-06 )
 scale = Vector2( 1, 0.516885 )
 shape = SubResource( 1 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

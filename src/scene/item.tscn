@@ -17,6 +17,7 @@ extents = Vector2( 42.63, 38.5159 )
 [node name="item" type="KinematicBody2D" groups=[
 "item",
 ]]
+position = Vector2( 1023.06, 200 )
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]

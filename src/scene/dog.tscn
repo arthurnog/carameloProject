@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://src/script/dog.gd" type="Script" id=2]
@@ -15,19 +15,22 @@ animations = [ {
 "name": "fear",
 "speed": 5.0
 }, {
-"frames": [  ],
-"loop": true,
-"name": "die",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
 "name": "run",
 "speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "die",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 33.6014, 33.8681 )
+extents = Vector2( 33.6014, 33.363 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 36.0526, 18.2269 )
 
 [node name="dog" type="Node2D"]
 script = ExtResource( 2 )
@@ -35,9 +38,23 @@ script = ExtResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "run"
+offset = Vector2( 0, -50 )
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 0, -50 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 2 )
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2( 0, -50 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2( 0, 16.8179 )
+shape = SubResource( 3 )
+disabled = true
+
+[node name="Tween" type="Tween" parent="."]
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_entered" from="Area2D2" to="." method="_on_Area2D_area_entered"]
+[connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]
