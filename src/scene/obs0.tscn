@@ -9,7 +9,7 @@ extents = Vector2( 33.3248, 32.5762 )
 [node name="obs0" type="KinematicBody2D" groups=[
 "obstacle",
 ]]
-position = Vector2( 1000, 317.839 )
+position = Vector2( 1000, 297.635 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]

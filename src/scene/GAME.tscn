@@ -40,5 +40,6 @@ wait_time = 6.0
 [connection signal="cool" from="dogMal" to="cenario" method="_on_dogMal_cool"]
 [connection signal="fear" from="dogMal" to="dog" method="_on_dogMal_fear"]
 [connection signal="fear" from="dogMal" to="cenario" method="_on_dogMal_fear"]
+[connection signal="dead" from="dog" to="." method="_on_dog_dead"]
 [connection signal="timeout" from="itens/TimerI" to="itens" method="_on_TimerI_timeout"]
 [connection signal="timeout" from="obstaculos/TimerO" to="obstaculos" method="_on_TimerO_timeout"]
