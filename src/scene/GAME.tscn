@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/scene/dog.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/scene/cenario.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/scene/dogMal.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/script/GAME.gd" type="Script" id=4]
+[ext_resource path="res://src/script/obsSpawn.gd" type="Script" id=5]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 4 )
@@ -22,6 +23,8 @@ position = Vector2( 197.06, 317.839 )
 wait_time = 25.0
 
 [node name="obstaculos" type="Node" parent="."]
+script = ExtResource( 5 )
 
 [node name="TimerO" type="Timer" parent="obstaculos"]
 wait_time = 10.0
+[connection signal="timeout" from="obstaculos/TimerO" to="obstaculos" method="_on_TimerO_timeout"]
