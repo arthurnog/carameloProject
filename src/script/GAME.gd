@@ -17,5 +17,13 @@ func _input(event):
 
 func _on_dog_dead():
 	#GAME OVER
+	#cena de derrota
+	queue_free()
+	pass # Replace with function body.
+
+
+func _on_dog_win():
+	#WIN
+	#aqui a cena muda para a cena de vitória
 	queue_free()
 	pass # Replace with function body.

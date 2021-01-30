@@ -1,5 +1,7 @@
 extends Node
 
+#Esse nó cria os itens dentro do jogo da um tempo
+
 const item = preload("res://src/scene/item.tscn")
 
 func _ready():

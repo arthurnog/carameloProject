@@ -2,11 +2,12 @@ extends Node2D
 
 signal dead
 signal catch
+signal win
 
 export (int) var life = 3
 var itens = 0
 
-var jump = false #variavel que diz se o dog puouy ou não
+var jump = false #variavel que diz se o dog pula ou não
 onready var startY = position.y #valor inicial de y do dog
 
 
@@ -18,6 +19,8 @@ func _ready():
 func _process(delta):
 	if life == 0:
 		emit_signal("dead")
+	elif itens == 6:
+		emit_signal("win")
 
 
 # warning-ignore:unused_argument
@@ -44,7 +47,7 @@ func _physics_process(delta):
 func _on_dogMal_cool():
 	#ativa o twen e o dog volta pra posição original
 	#animação dog de boa
-	$Tween.interpolate_property(self, "position:x", position.x, position.x-200, 1, Tween.TRANS_EXPO, Tween.EASE_IN)
+	$Tween.interpolate_property(self, "position:x", position.x, position.x-200, 2, Tween.TRANS_EXPO, Tween.EASE_IN)
 	$Tween.start()
 	pass # Replace with function body.
 
@@ -65,7 +68,7 @@ func _on_Tween_tween_completed(object, key):
 	if object == self and key == ":position:y":
 		if jump:
 			if position.y < startY:
-				$Tween.interpolate_property(self, "position:y", position.y, position.y+100, 1, Tween.TRANS_EXPO, Tween.EASE_IN)
+				$Tween.interpolate_property(self, "position:y", position.y, position.y+100, 0.8, Tween.TRANS_EXPO, Tween.EASE_IN)
 				$Tween.start()
 				yield($Tween,"tween_completed")
 				jump = false

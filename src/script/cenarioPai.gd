@@ -1,5 +1,7 @@
 extends Node2D
 
+#Esse nó foi criado para conectar o sinal gerado pelo dogMal
+
 func _on_dogMal_cool():
 	$AnimatedSprite.normal()
 	$AnimatedSprite2.normal()
