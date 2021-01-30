@@ -35,7 +35,7 @@ func _physics_process(delta):
 		
 		else:
 			if not jump:
-				$Tween.interpolate_property(self, "position:y", position.y, position.y-100, 1, Tween.TRANS_EXPO, Tween.EASE_OUT)
+				$Tween.interpolate_property(self, "position:y", position.y, position.y-100, .7, Tween.TRANS_EXPO, Tween.EASE_OUT)
 				$Tween.start()
 				jump = true
 			pass

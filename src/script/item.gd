@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 onready var startY = position.y
-export (int) var velx = -160
+export (int) var velx = -180
 export (int) var vely = 40
 
 func _ready():

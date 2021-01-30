@@ -32,7 +32,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 33.6014, 22.7322 )
+extents = Vector2( 17.6084, 15.5495 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 36.0526, 18.2269 )
@@ -47,7 +47,7 @@ script = ExtResource( 2 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 1 )
 animation = "run"
-frame = 1
+frame = 3
 playing = true
 offset = Vector2( 0, -50 )
 
@@ -56,14 +56,14 @@ position = Vector2( 0, -50 )
 scale = Vector2( 1.5, 1.5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 0, -12.3333 )
+position = Vector2( 1.05826, -27.3611 )
 shape = SubResource( 2 )
 
 [node name="Area2D2" type="Area2D" parent="."]
 position = Vector2( 0, -50 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D2"]
-position = Vector2( 0, 16.8179 )
+position = Vector2( 1, -35.1821 )
 shape = SubResource( 3 )
 disabled = true
 

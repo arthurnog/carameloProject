@@ -19,7 +19,7 @@ frames = SubResource( 1 )
 script = ExtResource( 2 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="AnimatedSprite"]
-position = Vector2( -21.2429, -21.1667 )
+position = Vector2( 365.746, -21.1667 )
 scale = Vector2( 1.06804, 1.05817 )
 rect = Rect2( -10, -10, 60, 60 )
 
@@ -29,7 +29,7 @@ frames = SubResource( 1 )
 script = ExtResource( 2 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="AnimatedSprite2"]
-position = Vector2( -21.2429, -21.1667 )
+position = Vector2( 367.633, -26.8299 )
 scale = Vector2( 1.06804, 1.05817 )
 rect = Rect2( -10, -10, 60, 60 )
 
@@ -39,7 +39,7 @@ frames = SubResource( 1 )
 script = ExtResource( 2 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="AnimatedSprite3"]
-position = Vector2( -21.2429, -21.1667 )
+position = Vector2( 367.633, -21.1667 )
 scale = Vector2( 1.06804, 1.05817 )
 rect = Rect2( -10, -10, 60, 60 )
 [connection signal="screen_exited" from="AnimatedSprite/VisibilityNotifier2D" to="AnimatedSprite" method="_on_VisibilityNotifier2D_screen_exited"]
