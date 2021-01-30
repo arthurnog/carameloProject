@@ -12,7 +12,7 @@ func _ready():
 func _on_VisibilityNotifier2D_screen_exited():
 	#o cenário é composto de 3 imagens que se repetem e quando uma imagem sai
 	#do palco ela volta pro começo
-	position.x = 424*4.7
+	position.x = 424*5
 
 func _process(delta):
 	position.x += vel*delta

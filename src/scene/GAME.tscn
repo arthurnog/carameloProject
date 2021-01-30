@@ -18,7 +18,8 @@ script = ExtResource( 6 )
 position = Vector2( -239.439, 281.817 )
 
 [node name="dog" parent="." instance=ExtResource( 1 )]
-position = Vector2( 197.06, 317.839 )
+position = Vector2( 198.647, 378.16 )
+scale = Vector2( 1.2, 1.2 )
 
 [node name="itens" type="Node" parent="."]
 script = ExtResource( 7 )
@@ -31,17 +32,17 @@ script = ExtResource( 5 )
 
 [node name="TimerO" type="Timer" parent="obstaculos"]
 wait_time = 6.0
-[connection signal="START" from="." to="dog" method="_on_GAME_START"]
-[connection signal="START" from="." to="dogMal" method="_on_GAME_START"]
-[connection signal="START" from="." to="cenario" method="_on_GAME_START"]
-[connection signal="START" from="." to="itens" method="_on_GAME_START"]
 [connection signal="START" from="." to="obstaculos" method="_on_GAME_START"]
-[connection signal="cool" from="dogMal" to="dog" method="_on_dogMal_cool"]
-[connection signal="cool" from="dogMal" to="cenario" method="_on_dogMal_cool"]
+[connection signal="START" from="." to="itens" method="_on_GAME_START"]
+[connection signal="START" from="." to="cenario" method="_on_GAME_START"]
+[connection signal="START" from="." to="dogMal" method="_on_GAME_START"]
+[connection signal="START" from="." to="dog" method="_on_GAME_START"]
 [connection signal="cool" from="dogMal" to="obstaculos" method="_on_dogMal_cool"]
-[connection signal="fear" from="dogMal" to="dog" method="_on_dogMal_fear"]
-[connection signal="fear" from="dogMal" to="cenario" method="_on_dogMal_fear"]
+[connection signal="cool" from="dogMal" to="cenario" method="_on_dogMal_cool"]
+[connection signal="cool" from="dogMal" to="dog" method="_on_dogMal_cool"]
 [connection signal="fear" from="dogMal" to="obstaculos" method="_on_dogMal_fear"]
+[connection signal="fear" from="dogMal" to="cenario" method="_on_dogMal_fear"]
+[connection signal="fear" from="dogMal" to="dog" method="_on_dogMal_fear"]
 [connection signal="dead" from="dog" to="." method="_on_dog_dead"]
 [connection signal="win" from="dog" to="." method="_on_dog_win"]
 [connection signal="timeout" from="itens/TimerI" to="itens" method="_on_TimerI_timeout"]

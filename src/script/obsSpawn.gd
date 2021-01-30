@@ -13,11 +13,7 @@ func _on_GAME_START():
 func spawn():
 	#os obstaculos são criados de maneira aleatória
 	var obs
-	randomize()
-	if randi()%2:
-		obs = obs1.instance()
-	else:
-		obs = obs0.instance()
+	obs = obs0.instance()
 	if flag:
 		obs.fast()
 	else:

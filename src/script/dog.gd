@@ -12,6 +12,7 @@ onready var startY = position.y #valor inicial de y do dog
 
 
 func _ready():
+	$AnimatedSprite.play("idle")
 	pass # Replace with function body.
 
 
@@ -49,6 +50,7 @@ func _on_dogMal_cool():
 	#animação dog de boa
 	$Tween.interpolate_property(self, "position:x", position.x, position.x-200, 2, Tween.TRANS_EXPO, Tween.EASE_IN)
 	$Tween.start()
+	$AnimatedSprite.play("run")
 	pass # Replace with function body.
 
 
@@ -56,6 +58,7 @@ func _on_dogMal_fear():
 	#doguinho vai para frente com medo (animação medo)
 	$Tween.interpolate_property(self, "position:x", position.x, position.x+200, 1, Tween.TRANS_EXPO, Tween.EASE_IN)
 	$Tween.start()
+	$AnimatedSprite.play("fear")
 	pass # Replace with function body.
 
 

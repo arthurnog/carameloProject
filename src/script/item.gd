@@ -5,7 +5,9 @@ export (int) var velx = -160
 export (int) var vely = 40
 
 func _ready():
-	pass # Replace with function body.
+	randomize()
+	var i = randi()%4
+	$AnimatedSprite.frame = i
 
 func _physics_process(delta):
 	#Item sem move em um movimento oscilatório

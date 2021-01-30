@@ -5,6 +5,11 @@ extends KinematicBody2D
 
 export (int) var  vel = -160
 
+func _ready():
+	randomize()
+	var i = randi()%4
+	$Sprite.frame = i
+
 func _process(delta):
 	move_and_slide(Vector2(vel,0))
 
