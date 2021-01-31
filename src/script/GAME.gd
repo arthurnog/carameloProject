@@ -10,6 +10,8 @@ func _input(event):
 		emit_signal("START")
 		set_process_input(false)
 		$Sprite.visible = false
+		$GUI/MarginContainer.visible = true
+		$GUI/MarginContainer2.visible = true
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -29,3 +31,13 @@ func _on_dog_win():
 	get_tree().change_scene("res://src/scene/win.tscn")
 	queue_free()
 	pass # Replace with function body.
+
+
+func _on_dog_catch():
+	$GUI/MarginContainer2/TOYS.text = "TOYS " + str($dog.itens) + "/6"
+	pass # Replace with function body.
+
+
+func _on_dog_hit():
+	$GUI/MarginContainer/LIVES.text = "LIVES " + str($dog.life)
+	

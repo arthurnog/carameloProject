@@ -3,9 +3,10 @@ extends Node2D
 signal dead
 signal catch
 signal win
+signal hit
 
 export (int) var life = 3
-var itens = 0
+export (int) var itens = 0
 
 var jump = false #variavel que diz se o dog pula ou não
 onready var startY = position.y #valor inicial de y do dog
@@ -82,6 +83,7 @@ func _on_Area2D_body_entered(body):
 	if body.is_in_group("obstacle"):
 		life += -1
 		print(life)
+		emit_signal("hit")
 	elif body.is_in_group("item"):
 		itens += 1
 		print(itens)

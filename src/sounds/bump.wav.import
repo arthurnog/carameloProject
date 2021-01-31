@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/bump.wav-dc909f5bf6f14e94a1457c7630ccee3e.sample"
+
+[deps]
+
+source_file="res://src/sounds/bump.wav"
+dest_files=[ "res://.import/bump.wav-dc909f5bf6f14e94a1457c7630ccee3e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
