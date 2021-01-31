@@ -41,6 +41,7 @@ func _physics_process(delta):
 				jump = true
 			pass
 	elif Input.is_action_just_released("click"):
+		$AudioJump.play()
 		if $Area2D2/CollisionShape2D2.disabled == false:
 			$Area2D2/CollisionShape2D2.disabled = true
 			$Area2D/CollisionShape2D.disabled = false
@@ -52,6 +53,7 @@ func _on_dogMal_cool():
 	$Tween.interpolate_property(self, "position:x", position.x, position.x-200, 2, Tween.TRANS_EXPO, Tween.EASE_IN)
 	$Tween.start()
 	$AnimatedSprite.play("run")
+	$AudioFear.stop()
 	pass # Replace with function body.
 
 
@@ -60,6 +62,7 @@ func _on_dogMal_fear():
 	$Tween.interpolate_property(self, "position:x", position.x, position.x+200, 1, Tween.TRANS_EXPO, Tween.EASE_IN)
 	$Tween.start()
 	$AnimatedSprite.play("fear")
+	$AudioFear.play()
 	pass # Replace with function body.
 
 
@@ -69,6 +72,7 @@ func _on_GAME_START():
 
 
 func _on_Tween_tween_completed(object, key):
+	$AudioJump.stop()
 	if object == self and key == ":position:y":
 		if jump:
 			if position.y < startY:
@@ -84,9 +88,11 @@ func _on_Area2D_body_entered(body):
 		life += -1
 		print(life)
 		emit_signal("hit")
+		$AudioHit.play()
 	elif body.is_in_group("item"):
 		itens += 1
 		print(itens)
 		emit_signal("catch")
+		$AudioItem.play()
 		body.queue_free()
 	

@@ -3,7 +3,12 @@ extends Node2D
 signal START
 
 func _ready():
+	$AudioStreamPlayer.play()
 	pass # Replace with function body.
+	
+func _process(delta):
+	if not $AudioStreamPlayer.playing:
+		$AudioStreamPlayer.play()
 
 func _input(event):
 	if Input.is_action_just_pressed("click"):

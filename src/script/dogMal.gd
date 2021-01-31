@@ -23,6 +23,7 @@ func _on_VisibilityNotifier2D_screen_entered():
 	randomize()
 	var tempo = rand_range(10,20)
 	$Timer0.wait_time = tempo
+	$AudioStreamPlayer.play()
 	pass # Replace with function body.
 
 func _on_VisibilityNotifier2D_screen_exited():
@@ -31,6 +32,7 @@ func _on_VisibilityNotifier2D_screen_exited():
 	$Timer0.start()
 	#emmit signal cool
 	emit_signal("cool")
+	$AudioStreamPlayer.stop()
 	pass # Replace with function body.
 
 func _on_Timer1_timeout():
